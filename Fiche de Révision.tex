@@ -1,0 +1,127 @@
+\documentclass{article}
+
+\usepackage{xcolor}
+\usepackage{amsmath}
+\definecolor{redhighlight}{HTML}{FF0000}
+
+\title{Fiche de Révision Algorithmique}
+\author{Loureau Ryan}
+
+\begin{document}
+\maketitle 
+\tableofcontents
+
+\section{\textcolor{redhighlight}{Définitions}}
+\begin{enumerate}
+\item \textbf{Instance d'un Problème :}
+Une Instance d'un problème est composée d'une valeur pour chaque donnée du problème.
+\item \textbf{Algortihme :}
+Un Algorithme est une méthode indiquant sans ambiguïté une suite finie d'actions mécaniques à éffectuer pour trouver la réponse à un problème
+\item \textbf{Indécidabilité :}
+Un problème pour lequel aucun algorithme n'existe est dit indécidable
+\item \textbf{Complexité Algorithmique :}
+La complexité algorithmique (ou coût ) est la mesure de l'éfficacité d'un algorithme, c'est a dire son temps d'éxecution et la place en mémoire utilisé. Cela permet de comparé deux algorithmes qui résolvent le même problèmes
+
+\end{enumerate}
+
+\section{\textcolor{redhighlight}{Problème Indécidable}}
+\paragraph{Un problème indécidable veut dire qu'il n'existe pas d'algorithmes capable de reponde a n'importe quel instance du problème. Cela veut dire que pour tout algorithme, il existe une donnée du problème telle que soit l'algorithme ne s'ârrete pas ou la réponse est fausse.}
+
+\section{\textcolor{redhighlight}{Problème Traitable}}
+\paragraph{Un problème est dit traitable si il existe un algorithme pour le résoudre, il est considére non traitable lorsque l'algorithme met trop de temps a le résoudre ou utilise trop de mémoire. Mais on peut cherche un algorithmes qui donne une réponse approché ou qui ne reponde pas toujours.}
+
+\section{\textcolor{redhighlight}{Notation de Landau}}
+\begin{tabular}{|c|c|}
+    \hline
+    Notation & Signification \\
+    \hline
+    f = O(g) & f est bornée par g \\
+    \hline
+    f =   $\theta$(g) & f est du même ordre que g \\
+    \hline
+    f = o(g) & f est dominée par g \\
+
+    \hline
+\end{tabular}
+
+
+
+\paragraph{Si f est bornée par g alors cela signifie que pour les grandes valeurs de n, f(n) ne dépasse pas k*g(n) }
+\paragraph{Si f est du même ordre que g alors cela signifie que pour les grandes valeurs de n, f(n) est encadrée par k1 * g(n) et k2*g(n) ou dit autrement f = O(g) et g = O(f). }
+\paragraph{Si f est dominée par g alors cela signifie que pour $\varepsilon$ aussi petit qu'on veut, et pour des grandes valeurs de n, f(n) ne dépasse pas $\varepsilon$ * g(n). Dit autrement pour des grandes valeurs de n alors f(n) est tout petit par rapport à g(n) }
+
+\subsection{Utilisation pratiques}
+\paragraph{Lorsqu'on aura une fonction f à étudier, on cherchera à trouver : 1 Une fonction simple g telle que  f = $\theta$(g) OU 2 à défaut, une fonction h telle que f = O(h).}
+\paragraph{Lorsqu'on aura à comparer deux fonctions f et g, on cherchera à montrer : soit f = o(g), soit f= $\theta$(g)}
+
+\subsection{Echelle de comparaison}
+\begin{center} % Centrez le tableau sur la page
+    \begin{tabular}{|c|c|}
+        \hline
+        Fonction & Nom \\
+        \hline
+        $O(1)$ & Constante \\
+        \hline
+        $O(\log n)$ & Logarithmique \\
+        \hline
+        $O((\log n)^n)$ & Polylogarithmique \\
+        \hline
+        $O(n)$ & Linéaire \\
+        \hline
+        $O(n \log n)$ & Log-linéaire \\
+        \hline
+        $O(n^2)$ & Quadratique \\
+        \hline
+        $O(n^3)$ & Cubique \\
+        \hline
+        $O(n^c)$ & Polynomiale \\
+        \hline
+        $O(n!)$ & Factorielle \\
+        \hline
+    \end{tabular}
+
+\end{center}
+
+\section{\textcolor{redhighlight}{Logarithme et exponentielle}}
+\begin{center} % Centrez le tableau sur la page
+\begin{tabular}{|c|c|}
+\hline
+\text{Fonction Exponentielle} & \text{Formule} \\
+\hline
+Exponentielle de base $e$ & $e^x$ \\
+\hline
+Exponentielle de base $a$ & $a^x$ \\
+\hline
+Logarithme naturel & $\ln(x)$ \\
+\hline
+Logarithme de base $a$ & $\log_a(x)$ \\
+\hline
+\text{Propriétés Exponentielles} & \\
+\hline
+Multiplication de bases égales & $a^x \cdot a^y = a^{x + y}$ \\
+\hline
+Division de bases égales & $\frac{a^x}{a^y} = a^{x - y}$ \\
+\hline
+Puissance d'une puissance & $(a^x)^y = a^{x \cdot y}$ \\
+\hline
+\text{Logarithmes} & \\
+\hline
+Changement de base & $\log_a(b) = \frac{\ln(b)}{\ln(a)}$ \\
+\hline
+Logarithme d'un produit & $\log_a(x \cdot y) = \log_a(x) + \log_a(y)$ \\
+\hline
+Logarithme d'un quotient & $\log_a\left(\frac{x}{y}\right) = \log_a(x) - \log_a(y)$ \\
+\hline
+Logarithme d'une puissance & $\log_a(x^y) = y \cdot \log_a(x)$ \\
+\hline
+Logarithme de 1 & $\log_a(1) = 0$ \\
+\hline
+\end{tabular}
+\end{center}
+\section{\textcolor{redhighlight}{Formules utiles}}
+\paragraph{Somme des premiers entiers : $\sum_{i=1}^{n}$ i = $\frac{n(n+1)}{2}$ = O(n²)}
+\paragraph{Somme des carrés des premiers entiers : $\sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}$ = O($n^3$)}
+\paragraph{$n! =\sqrt{2n\pi}( \frac{n}{\exp})^n$}
+
+
+\end{document}
